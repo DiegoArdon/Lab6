@@ -1,0 +1,366 @@
+// Ejercicio1
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Libro {
+private:
+    string titulo;
+    string autor;
+    string editorial;
+    string genero;
+    int anioPublicacion;
+    int numPaginas;
+
+public:
+    // Constructor
+    Libro(string tit, string aut, string edit, string gen, int anio, int paginas) {
+        titulo = tit;
+        autor = aut;
+        editorial = edit;
+        genero = gen;
+        anioPublicacion = anio;
+        numPaginas = paginas;
+    }
+
+    // Métodos para establecer los datos
+    void setTitulo(string tit) {
+        titulo = tit;
+    }
+
+    void setAutor(string aut) {
+        autor = aut;
+    }
+
+    void setEditorial(string edit) {
+        editorial = edit;
+    }
+
+    void setGenero(string gen) {
+        genero = gen;
+    }
+
+    void setAnioPublicacion(int anio) {
+        anioPublicacion = anio;
+    }
+
+    void setNumPaginas(int paginas) {
+        numPaginas = paginas;
+    }
+
+    // Métodos para obtener los datos
+    string getTitulo() {
+        return titulo;
+    }
+
+    string getAutor() {
+        return autor;
+    }
+
+    string getEditorial() {
+        return editorial;
+    }
+
+    string getGenero() {
+        return genero;
+    }
+
+    int getAnioPublicacion() {
+        return anioPublicacion;
+    }
+
+    int getNumPaginas() {
+        return numPaginas;
+    }
+
+    // Método para mostrar la información del libro
+    void mostrarInfo() {
+        cout << "Título: " << titulo << endl;
+        cout << "Autor: " << autor << endl;
+        cout << "Editorial: " << editorial << endl;
+        cout << "Género: " << genero << endl;
+        cout << "Año de publicación: " << anioPublicacion << endl;
+        cout << "Número de páginas: " << numPaginas << endl;
+    }
+};
+
+int main() {
+    // Crear instancia de un libro
+    Libro libro1("El juego de Ender", "Orson Scott Card", "Ediciones B", "Ciencia ficción", 1985, 324);
+
+    // Mostrar la información del libro
+    libro1.mostrarInfo();
+
+    // Modificar el título del libro
+    libro1.setTitulo("El hobbit");
+
+    // Mostrar la información actualizada del libro
+    cout << "\nInformación actualizada del libro:" << endl;
+    libro1.mostrarInfo();
+
+    return 0;
+}
+// Ejercicio2
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Estudiante {
+private:
+    string nombres;
+    string apellidos;
+    string curso;
+    int edad;
+
+public:
+    // Constructor
+    Estudiante(string nomb, string apell, string curs, int ed) {
+        nombres = nomb;
+        apellidos = apell;
+        curso = curs;
+        edad = ed;
+    }
+
+    // Métodos para establecer los datos
+    void setNombres(string nomb) {
+        nombres = nomb;
+    }
+
+    void setApellidos(string apell) {
+        apellidos = apell;
+    }
+
+    void setCurso(string curs) {
+        curso = curs;
+    }
+    void setEdad(int ed) {
+        edad = ed;
+    }
+
+    // Métodos para obtener los datos
+    string getNombres() {
+        return nombres;
+    }
+
+    string getApellidos() {
+        return apellidos;
+    }
+
+    string getCurso() {
+        return curso;
+    }
+    int getEdad() {
+        return edad;
+    }
+
+    // Método para mostrar la información del libro
+    void mostrarInfo() {
+        cout << "Nombres: " << nombres << endl;
+        cout << "Apellidos: " << apellidos<< endl;
+        cout << "Curso: " << curso << endl;
+        cout << "Edad: " << edad << endl;
+    }
+};
+
+int main() {
+    // Crear instancia de un libro
+    Estudiante estudiante1("Diego ", "Ardón Morales", "Programación1", 19);
+
+    // Mostrar la información del libro
+    estudiante1.mostrarInfo();
+
+    // Modificar el título del libro
+    estudiante1.setNombres("Diego Andrés");
+
+    // Mostrar la información actualizada del libro
+    cout << "\nInformación actualizada del estudiante:" << endl;
+    estudiante1.mostrarInfo();
+
+    return 0;
+}
+
+//Ejercicio3 
+#include <iostream>
+
+using namespace std;
+
+class Calculadora {
+public:
+    int sumar(int a, int b) {
+        return a + b;
+    }
+
+    int restar(int a, int b) {
+        return a - b;
+    }
+
+    int multiplicar(int a, int b) {
+        return a * b;
+    }
+
+    float dividir(int a, int b) {
+        if (b != 0) {
+            return static_cast<float>(a) / b;
+        } else {
+            cout << "Error: División por cero no permitida." << endl;
+            return 0;
+        }
+    }
+};
+
+int main() {
+    Calculadora miCalculadora;
+
+    int num1 = 10;
+    int num2 = 5;
+
+    cout << "Suma: " << miCalculadora.sumar(num1, num2) << endl;
+    cout << "Resta: " << miCalculadora.restar(num1, num2) << endl;
+    cout << "Multiplicación: " << miCalculadora.multiplicar(num1, num2) << endl;
+    cout << "División: " << miCalculadora.dividir(num1, num2) << endl;
+
+    return 0;
+}
+//Ejercicio4
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class CuentaBancaria {
+private:
+    string titular;
+    string tipoCuenta;
+    double saldo;
+
+public:
+    // Constructor
+    CuentaBancaria(string nombreTitular, string tipo, double saldoInicial) {
+        titular = nombreTitular;
+        tipoCuenta = tipo;
+        saldo = saldoInicial;
+    }
+
+    // Métodos para establecer los datos
+    void setTitular(string nombreTitular) {
+        titular = nombreTitular;
+    }
+
+    void setTipoCuenta(string tipo) {
+        tipoCuenta = tipo;
+    }
+
+    void setSaldo(double nuevoSaldo) {
+        saldo = nuevoSaldo;
+    }
+
+    // Métodos para obtener los datos
+    string getTitular() {
+        return titular;
+    }
+
+    string getTipoCuenta() {
+        return tipoCuenta;
+    }
+
+    double getSaldo() {
+        return saldo;
+    }
+
+    // Método para mostrar la información de la cuenta bancaria
+    void mostrarInfo() {
+        cout << "Titular: " << titular << endl;
+        cout << "Tipo de Cuenta: " << tipoCuenta << endl;
+        cout << "Saldo: $" << saldo << endl;
+    }
+};
+
+int main() {
+    // Crear instancia de una cuenta bancaria
+    CuentaBancaria cuenta1("Juan Pérez", "Corriente", 5000.75);
+
+    // Mostrar la información de la cuenta
+    cuenta1.mostrarInfo();
+
+    // Realizar una transacción (actualizar saldo)
+    cuenta1.setSaldo(7000.25);
+
+    // Mostrar la información actualizada de la cuenta
+    cout << "\nInformación actualizada de la cuenta bancaria:" << endl;
+    cuenta1.mostrarInfo();
+
+    return 0;
+}
+//Ejercicio5
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Pelicula {
+private:
+    string titulo;
+    string director;
+    int anio;
+
+public:
+    // Constructor
+    Pelicula(string tit, string direc, int an) {
+        titulo = tit;
+        director = direc;
+        anio = an;
+    }
+
+    // Métodos para establecer los datos
+    void setTitulo(string tit) {
+        titulo = tit;
+    }
+
+    void setDirector(string direc) {
+        director = direc;
+    }
+
+    void setAnio(int an) {
+        anio = an;
+    }
+
+    // Métodos para obtener los datos
+    string getTitulo() {
+        return titulo;
+    }
+
+    string getDirector() {
+        return director;
+    }
+
+    int getAnio() {
+        return anio;
+    }
+
+    // Método para mostrar la información de la película
+    void mostrarInfo() {
+        cout << "Título: " << titulo << endl;
+        cout << "Director: " << director << endl;
+        cout << "Año: " << anio << endl;
+    }
+};
+
+int main() {
+    // Crear instancia de una película
+    Pelicula pelicula1("Inception", "Christopher Nolan", 2010);
+
+    // Mostrar la información de la película
+    pelicula1.mostrarInfo();
+
+    // Modificar el título de la película
+    pelicula1.setTitulo("Interstellar");
+
+    // Mostrar la información actualizada de la película
+    cout << "\nInformación actualizada de la película:" << endl;
+    pelicula1.mostrarInfo();
+
+    return 0;
+}
